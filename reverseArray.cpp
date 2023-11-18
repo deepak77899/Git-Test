@@ -17,4 +17,5 @@ for(int i=0,j=9;i<j;i++,j--){
 for(int i=0;i<10;i++)
 cout<<a[i];
 
+  return 0;
 }
