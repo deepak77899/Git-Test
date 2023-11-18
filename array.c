@@ -1,56 +1,28 @@
-// C program to reverse array
-// using pointers
 #include <stdio.h>
 
-// Function to swap two memory contents
-void swap(int* a, int* b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+void reverseArray(int *arr, int n) {
+  int *left = arr;
+  int *right = arr + n - 1;
+  while (left < right) {
+    int temp = *left;
+    *left = *right;
+    *right = temp;
+    left++;
+    right--;
+  }
 }
 
-// Function to reverse the array through pointers
-void reverse(int array[], int array_size)
-{
-	// pointer1 pointing at the beginning of the array
-	int *pointer1 = array,
+int main() {
+  int arr[] = {1, 2, 3, 4, 5};
+  int n = sizeof(arr) / sizeof(arr[0]);
 
-		// pointer2 pointing at end of the array
-		*pointer2 = array + array_size - 1;
-	while (pointer1 < pointer2) {
-		swap(pointer1, pointer2);
-		pointer1++;
-		pointer2--;
-	}
+  reverseArray(arr, n);
+
+  for (int i = 0; i < n; i++) {
+    printf("%d ", arr[i]);
+  }
+
+  printf("\n");
+
+  return 0;
 }
-
-// Function to print the array
-void print(int* array, int array_size)
-{
-	// Length pointing at end of the array
-	int *length = array + array_size,
-
-		// Position pointing to the beginning of the array
-		*position = array;
-	printf("Array = ");
-	for (position = array; position < length; position++)
-		printf("%d ", *position);
-}
-
-// Driver function
-int main()
-{
-	// Array to hold the values
-	int array[] = { 2, 4, -6, 5, 8, -1 };
-
-	printf("Original ");
-	print(array, 6);
-
-	printf("Reverse ");
-	reverse(array, 6);
-	print(array, 6);
-	return 0;
-}
-
-//code contributed by dhanshriborse
