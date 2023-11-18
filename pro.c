@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <stdio.h>   //pavan modi 
+                    //R.n. 523410005
 int main(){
   int n;
   printf("enter size  of arrry");
@@ -19,4 +20,4 @@ a[i]=temp;
  for(int i=0;i<n;i++)
  printf(" %d  ",a[i]);
   return 0;
-}
+} 
