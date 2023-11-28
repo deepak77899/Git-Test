@@ -7,8 +7,15 @@ int main(){
 
     int b[size];
 
-    for(int i=0;i<size;i++){
-        b[(size-i)-1]=a[i];
+    int *pointer = *(a+0);
+    int temp;
+    
+    while((size/2)!=0){
+        temp=*pointer;
+        *pointer=a[size-1];
+        a[size-1]=temp;
+        pointer++;
+        size--;
     }
 
     for(int i=0;i<size;i++){
